@@ -13,7 +13,6 @@ export default function ProductCard({ product }) {
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
 
-  // 🔥 Responsive config terpusat
   const layout = useMemo(() => {
     const isSmall = width < 360;
 
@@ -129,7 +128,6 @@ const styles = StyleSheet.create({
     borderColor: '#EDEBE5',
     overflow: 'hidden',
 
-    // 🔥 shadow biar modern (iOS + Android)
     elevation: 2,
   },
 
