@@ -17,7 +17,6 @@ export default function CartScreen() {
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
 
-  // 🔥 Responsive config
   const layout = useMemo(() => {
     const isSmall = width < 360;
     const isTablet = width >= 600;
@@ -170,7 +169,7 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center', // 🔥 lebih rapi
+    alignItems: 'center', 
     borderBottomWidth: 1,
     borderBottomColor: '#EDEBE5',
   },
