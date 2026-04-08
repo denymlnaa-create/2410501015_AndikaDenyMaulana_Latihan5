@@ -1,4 +1,3 @@
-// src/store/cartSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
@@ -8,7 +7,6 @@ const cartSlice = createSlice({
     total: 0,
   },
   reducers: {
-    // Tambah item ke cart (jika sudah ada, tambah quantity)
     addItem: (state, action) => {
       const existing = state.items.find(i => i.id === action.payload.id);
       if (existing) {
@@ -19,7 +17,6 @@ const cartSlice = createSlice({
       state.total += action.payload.price;
     },
 
-    // Hapus item dari cart
     removeItem: (state, action) => {
       const item = state.items.find(i => i.id === action.payload);
       if (item) {
@@ -28,7 +25,6 @@ const cartSlice = createSlice({
       }
     },
 
-    // Tambah quantity
     incrementQty: (state, action) => {
       const item = state.items.find(i => i.id === action.payload);
       if (item) {
@@ -37,7 +33,6 @@ const cartSlice = createSlice({
       }
     },
 
-    // Kurangi quantity (hapus jika qty = 1)
     decrementQty: (state, action) => {
       const item = state.items.find(i => i.id === action.payload);
       if (item) {
@@ -50,7 +45,6 @@ const cartSlice = createSlice({
       }
     },
 
-    // Kosongkan cart
     clearCart: (state) => {
       state.items = [];
       state.total = 0;
